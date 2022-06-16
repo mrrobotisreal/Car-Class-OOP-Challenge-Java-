@@ -1,22 +1,44 @@
 import java.sql.SQLOutput;
 
 public class Vehicle {
-    private boolean hasGasEngine = true;
-    private int numOfDoors;
-    private String color;
-    private int maxSpeed;
+    private String name;
+    private String size;
 
-    public void Vehicle(int doors, String color, int maxSpeed) {
-        this.numOfDoors = doors;
-        this.color = color;
-        this.maxSpeed = maxSpeed;
+    private int currentSpeed;
+    private int currentDirection;
+
+    public Vehicle(String name, String size) {
+        this.name = name;
+        this.size = size;
+
+        this.currentSpeed = 0;
+        this.currentDirection = 0;
     }
 
-    public void Drive(int speed) {
-        System.out.println("Vehicle is driving at " + speed + "mph.");
+    public void steer(int direction) {
+        this.currentDirection += direction;
+        System.out.println("Vehicle.steer(): Steering at " + currentDirection + " degrees.");
     }
 
-    public void Turn(String direction) {
-        System.out.println("Vehicle is turning " + direction + ".");
+    public void move(int speed, int direction) {
+        currentSpeed = speed;
+        currentDirection = direction;
+        System.out.println("Vehicle.move(): Moving at " + currentSpeed + "mph in direction " + currentDirection + ".");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 }
