@@ -26,6 +26,10 @@ public class Vehicle {
         System.out.println("Vehicle.move(): Moving at " + currentSpeed + "mph in direction " + currentDirection + ".");
     }
 
+    public void stop() {
+        this.currentSpeed = 0;
+    }
+
     public String getName() {
         return name;
     }
