@@ -38,11 +38,27 @@ public class Vehicle {
         return size;
     }
 
+    public int getCurrentSpeed() {
+        return currentSpeed;
+    }
+
+    public int getCurrentDirection() {
+        return currentDirection;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public void setCurrentSpeed(int speed) {
+        this.currentSpeed = speed;
+    }
+
+    public void setCurrentDirection(int direction) {
+        this.currentDirection = direction;
     }
 }
